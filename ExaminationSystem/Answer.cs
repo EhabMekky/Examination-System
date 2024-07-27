@@ -1,13 +1,17 @@
 ﻿namespace ExaminationSystem;
 
-public class Answer
+public class Answer : ICloneable
 {
     public int AnswerId { get; set; }
     public string AnswerText { get; set; }
 
-    public Answer(int answerId, string answerText)
+    public object Clone()
     {
-        AnswerId = answerId;
-        AnswerText = answerText;
+        return new Answer { AnswerId = this.AnswerId, AnswerText = this.AnswerText };
+    }
+
+    public override string ToString()
+    {
+        return $"Answer {AnswerId}: {AnswerText}";
     }
 }

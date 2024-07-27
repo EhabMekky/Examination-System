@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ehab.khallaf\\RiderProjects\\ExmainationSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E415F6CA-3C6B-4088-B7AC-58F545F31EAB}|ExaminationSystem\\ExaminationSystem.csproj|c:\\users\\ehab.khallaf\\riderprojects\\exmainationsystem\\examinationsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E415F6CA-3C6B-4088-B7AC-58F545F31EAB}|ExaminationSystem\\ExaminationSystem.csproj|solutionrelative:examinationsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ehab.khallaf\\RiderProjects\\ExmainationSystem\\ExaminationSystem\\Program.cs",
+              "RelativeDocumentMoniker": "ExaminationSystem\\Program.cs",
+              "ToolTip": "C:\\Users\\ehab.khallaf\\RiderProjects\\ExmainationSystem\\ExaminationSystem\\Program.cs",
+              "RelativeToolTip": "ExaminationSystem\\Program.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwAsAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T17:13:12.48Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,9 +1,14 @@
-﻿namespace ExaminationSystem;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 
-internal class Program()
+namespace ExaminationSystem;
+
+public class Program
 {
-    static void Main()
+    public static void Main()
     {
-        
     }
+
 }
+
