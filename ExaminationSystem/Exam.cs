@@ -1,17 +1,33 @@
-﻿namespace ExaminationSystem;
+﻿using System;
+
+namespace ExaminationSystem;
 
 public abstract class Exam
 {
-    public DateTime ExamTime { get; set; }
+    public TimeSpan TimeOfExam { get; set; }
     public int NumOfQuestions { get; set; }
     public Question[] Questions { get; set; }
     
-    protected Exam(DateTime time, int numberOfQuestions, Question[] questions)
+    public ExamType Type { get; set; }
+    
+    
+    public Exam(int numberOfQuestions)
     {
-        ExamTime = time;
         NumOfQuestions = numberOfQuestions;
-        Questions = questions;
+        Questions = new Question[numberOfQuestions];
     }
 
     public abstract void ShowExam();
+    public abstract object Clone();
+
+    public override string ToString()
+    {
+        return $"Exam: Questions: {NumOfQuestions}, Exam Time: {TimeOfExam} ";
+    }
+
+    public enum ExamType
+    {
+        Final,
+        Practical
+    }
 }
