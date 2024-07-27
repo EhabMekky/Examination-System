@@ -1,0 +1,15 @@
+C:\Users\ehab.khallaf\RiderProjects\ExmainationSystem\ExmainationSystem\bin\Debug\net8.0\ExmainationSystem.exe
+C:\Users\ehab.khallaf\RiderProjects\ExmainationSystem\ExmainationSystem\bin\Debug\net8.0\ExmainationSystem.deps.json
+C:\Users\ehab.khallaf\RiderProjects\ExmainationSystem\ExmainationSystem\bin\Debug\net8.0\ExmainationSystem.runtimeconfig.json
+C:\Users\ehab.khallaf\RiderProjects\ExmainationSystem\ExmainationSystem\bin\Debug\net8.0\ExmainationSystem.dll
+C:\Users\ehab.khallaf\RiderProjects\ExmainationSystem\ExmainationSystem\bin\Debug\net8.0\ExmainationSystem.pdb
+C:\Users\ehab.khallaf\RiderProjects\ExmainationSystem\ExmainationSystem\obj\Debug\net8.0\ExmainationSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ehab.khallaf\RiderProjects\ExmainationSystem\ExmainationSystem\obj\Debug\net8.0\ExmainationSystem.AssemblyInfoInputs.cache
+C:\Users\ehab.khallaf\RiderProjects\ExmainationSystem\ExmainationSystem\obj\Debug\net8.0\ExmainationSystem.AssemblyInfo.cs
+C:\Users\ehab.khallaf\RiderProjects\ExmainationSystem\ExmainationSystem\obj\Debug\net8.0\ExmainationSystem.csproj.CoreCompileInputs.cache
+C:\Users\ehab.khallaf\RiderProjects\ExmainationSystem\ExmainationSystem\obj\Debug\net8.0\ExmainationSystem.sourcelink.json
+C:\Users\ehab.khallaf\RiderProjects\ExmainationSystem\ExmainationSystem\obj\Debug\net8.0\ExmainationSystem.dll
+C:\Users\ehab.khallaf\RiderProjects\ExmainationSystem\ExmainationSystem\obj\Debug\net8.0\refint\ExmainationSystem.dll
+C:\Users\ehab.khallaf\RiderProjects\ExmainationSystem\ExmainationSystem\obj\Debug\net8.0\ExmainationSystem.pdb
+C:\Users\ehab.khallaf\RiderProjects\ExmainationSystem\ExmainationSystem\obj\Debug\net8.0\ExmainationSystem.genruntimeconfig.cache
+C:\Users\ehab.khallaf\RiderProjects\ExmainationSystem\ExmainationSystem\obj\Debug\net8.0\ref\ExmainationSystem.dll
