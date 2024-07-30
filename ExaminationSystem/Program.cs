@@ -131,7 +131,7 @@ public class Program
             }
         }
 
-        Console.Clear();
+        Console.Clear(); // should clear console and display Q one time
         
         foreach (var question in subject.Exam.Questions)
         {
@@ -143,7 +143,6 @@ public class Program
         subject.Exam.ShowExam();
         subject.Exam.ShowResults();
     }
-
 
     public enum ExamType
     {
