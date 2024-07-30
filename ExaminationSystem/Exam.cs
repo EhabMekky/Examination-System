@@ -1,33 +1,33 @@
-﻿using System;
-
-namespace ExaminationSystem;
+﻿namespace ExaminationSystem;
 
 public abstract class Exam
 {
-    public TimeSpan TimeOfExam { get; set; }
-    public int NumOfQuestions { get; set; }
+    public int Duration { get; set; }
     public Question[] Questions { get; set; }
-    
-    public ExamType Type { get; set; }
-    
-    
-    public Exam(int numberOfQuestions)
-    {
-        NumOfQuestions = numberOfQuestions;
-        Questions = new Question[numberOfQuestions];
-    }
 
     public abstract void ShowExam();
-    public abstract object Clone();
-
-    public override string ToString()
+    public abstract void ShowResults();
+    
+    public int CalculateTotalMarks()
     {
-        return $"Exam: Questions: {NumOfQuestions}, Exam Time: {TimeOfExam} ";
+        int total = 0;
+        foreach (var question in Questions)
+        {
+            total += question.Mark;
+        }
+        return total;
     }
 
-    public enum ExamType
+    public int CalculateUserMarks()
     {
-        Final,
-        Practical
+        int userTotal = 0;
+        foreach (var question in Questions)
+        {
+            if (question.IsCorrect())
+            {
+                userTotal += question.Mark;
+            }
+        }
+        return userTotal;
     }
 }

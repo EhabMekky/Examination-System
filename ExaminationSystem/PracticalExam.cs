@@ -4,47 +4,32 @@ namespace ExaminationSystem;
 
 public class PracticalExam : Exam
 {
-        public PracticalExam(int numberOfQuestions) : base(numberOfQuestions) { }
-
-        public override void ShowExam()
+    public override void ShowExam()
+    {
+        Console.WriteLine("Practical Exam:");
+        Console.WriteLine($"Duration: {Duration} minutes");
+        foreach (var question in Questions)
         {
-            Console.WriteLine(this.ToString());
-            foreach (var question in Questions)
-            {
-                Console.WriteLine(question.ToString());
-                if (question is MCQ_Question mcq)
-                {
-                    for (int i = 0; i < mcq.AnswerArray.Length; i++)
-                    {
-                        Console.WriteLine($"{i + 1}. {mcq.AnswerArray[i].AnswerText}");
-                    }
-                }
-            }
-        }
-
-        public void ShowCorrectAnswers()
-        {
-            Console.WriteLine($"Correct Answers for Practical Exam:");
-            foreach (var question in Questions)
-            {
-                Console.WriteLine($"Question: {question.Header}");
-                if (question is MCQ_Question mcq)
-                {
-                    Console.WriteLine($"Correct Answer: {mcq.CorrectAnswer.AnswerText}");
-                }
-            }
-        }
-
-        public override object Clone()
-        {
-            var clonedExam = new PracticalExam(NumOfQuestions)
-            {
-                TimeOfExam = this.TimeOfExam,
-            };
-            for (int i = 0; i < Questions.Length; i++)
-            {
-                clonedExam.Questions[i] = (Question)this.Questions[i].Clone();
-            }
-            return clonedExam;
+            question.DisplayQuestion();
         }
     }
+
+    public override void ShowResults()
+    {
+        int totalMarks = CalculateTotalMarks();
+        int userMarks = CalculateUserMarks();
+
+        Console.WriteLine("Right Answers:");
+        foreach (var question in Questions)
+        {
+            question.DisplayQuestion();
+            Console.WriteLine($"Correct Answer: {question.CorrectAnswer.AnswerText}");
+            Console.WriteLine($"Your Answer: {question.UserAnswer?.AnswerText ?? "No Answer"}");
+        }
+
+        Console.WriteLine($"Total Marks: {totalMarks}");
+        Console.WriteLine($"Your Marks: {userMarks}");
+        Console.WriteLine($"Final Grade: {(double)userMarks / totalMarks * 100}%");
+    }
+}
+

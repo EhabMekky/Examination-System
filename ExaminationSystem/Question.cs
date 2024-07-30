@@ -1,6 +1,6 @@
 ﻿namespace ExaminationSystem;
 
-public abstract class Question: ICloneable, IComparable<Question>
+public abstract class Question : IComparable<Question>
 {
     public int QuestionId { get; set; }
     public string Header { get; set; }
@@ -8,18 +8,19 @@ public abstract class Question: ICloneable, IComparable<Question>
     public int Mark { get; set; }
     public Answer[] AnswerArray { get; set; }
     public Answer CorrectAnswer { get; set; }
+    public Answer UserAnswer { get; set; }
 
-    public abstract object Clone();
+    
+    public abstract void GetUserAnswer();
+    public abstract void DisplayQuestion();
 
-    public int CompareTo(Question? other)
+    public bool IsCorrect()
     {
-        if (other == null) return 1;
+        return UserAnswer != null && UserAnswer.AnswerId == CorrectAnswer.AnswerId;
+    }
+
+    public int CompareTo(Question other)
+    {
         return QuestionId.CompareTo(other.QuestionId);
     }
-
-    public override string ToString()
-    {
-        return $"Question {QuestionId}: {Header}\n{Body}\nMarks: {Mark}";
-    }
-    public abstract void GetUserAnswer();
 }
