@@ -1,9 +1,7 @@
 ﻿namespace ExaminationSystem;
 
 public abstract class Exam
-{
-    public DateTime ExamDate { get; set; }
-    public TimeSpan TimeOfExam { get; set; }
+{ 
     public int Duration { get; set; }
     public Question[] Questions { get; set; }
     public DateTime StartTime { get; set; }
