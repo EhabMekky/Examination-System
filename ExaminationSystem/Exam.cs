@@ -1,33 +1,64 @@
-﻿using System;
-
-namespace ExaminationSystem;
+﻿namespace ExaminationSystem;
 
 public abstract class Exam
 {
+    public DateTime ExamDate { get; set; }
     public TimeSpan TimeOfExam { get; set; }
-    public int NumOfQuestions { get; set; }
+    public int Duration { get; set; }
     public Question[] Questions { get; set; }
-    
-    public ExamType Type { get; set; }
-    
-    
-    public Exam(int numberOfQuestions)
-    {
-        NumOfQuestions = numberOfQuestions;
-        Questions = new Question[numberOfQuestions];
-    }
+    public DateTime StartTime { get; set; }
+    public DateTime EndTime { get; set; }
 
     public abstract void ShowExam();
-    public abstract object Clone();
-
-    public override string ToString()
+    public abstract void ShowResults();
+    
+    public void ShowExam(bool displayQuestions = true)  
+    {  
+        if (displayQuestions)  
+        {  
+            foreach (var question in Questions)  
+            {  
+                question.DisplayQuestion();  
+            }  
+        }  
+    }  
+    public int CalculateTotalMarks()
     {
-        return $"Exam: Questions: {NumOfQuestions}, Exam Time: {TimeOfExam} ";
+        int total = 0;
+        foreach (var question in Questions)
+        {
+            total += question.Mark;
+        }
+        return total;
     }
 
-    public enum ExamType
+    public int CalculateUserMarks()
     {
-        Final,
-        Practical
+        int userTotal = 0;
+        foreach (var question in Questions)
+        {
+            if (question.IsCorrect())
+            {
+                userTotal += question.Mark;
+            }
+        }
+        return userTotal;
+    }
+    
+    public TimeSpan CalculateTimeTaken()
+    {
+        return EndTime - StartTime;
+    }
+
+    public bool IsTimeExceeded()
+    {
+        return CalculateTimeTaken() > TimeSpan.FromMinutes(Duration);
+    }
+    
+    public void ShowExamDetails()
+    {
+        TimeSpan actualDuration = EndTime - StartTime;
+        Console.WriteLine($"Exam Duration: {Duration} minutes");
+        Console.WriteLine($"Actual Time Taken: {actualDuration.TotalMinutes} minutes");
     }
 }
