@@ -2,12 +2,26 @@
 
 public abstract class Exam
 {
+    public DateTime ExamDate { get; set; }
+    public TimeSpan TimeOfExam { get; set; }
     public int Duration { get; set; }
     public Question[] Questions { get; set; }
+    public DateTime StartTime { get; set; }
+    public DateTime EndTime { get; set; }
 
     public abstract void ShowExam();
     public abstract void ShowResults();
     
+    public void ShowExam(bool displayQuestions = true)  
+    {  
+        if (displayQuestions)  
+        {  
+            foreach (var question in Questions)  
+            {  
+                question.DisplayQuestion();  
+            }  
+        }  
+    }  
     public int CalculateTotalMarks()
     {
         int total = 0;
@@ -29,5 +43,22 @@ public abstract class Exam
             }
         }
         return userTotal;
+    }
+    
+    public TimeSpan CalculateTimeTaken()
+    {
+        return EndTime - StartTime;
+    }
+
+    public bool IsTimeExceeded()
+    {
+        return CalculateTimeTaken() > TimeSpan.FromMinutes(Duration);
+    }
+    
+    public void ShowExamDetails()
+    {
+        TimeSpan actualDuration = EndTime - StartTime;
+        Console.WriteLine($"Exam Duration: {Duration} minutes");
+        Console.WriteLine($"Actual Time Taken: {actualDuration.TotalMinutes} minutes");
     }
 }

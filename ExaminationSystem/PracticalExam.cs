@@ -18,6 +18,7 @@ public class PracticalExam : Exam
     {
         int totalMarks = CalculateTotalMarks();
         int userMarks = CalculateUserMarks();
+        TimeSpan timeTaken = CalculateTimeTaken();
 
         Console.WriteLine("Right Answers:");
         foreach (var question in Questions)

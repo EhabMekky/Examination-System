@@ -18,6 +18,7 @@ public class FinalExam : Exam
     {
         int totalMarks = CalculateTotalMarks();
         int userMarks = CalculateUserMarks();
+        TimeSpan timeTaken = CalculateTimeTaken();
 
         Console.WriteLine("Questions and Answers:");
         foreach (var question in Questions)
@@ -30,11 +31,11 @@ public class FinalExam : Exam
             }
             Console.WriteLine($"Correct Answer: {question.CorrectAnswer.AnswerText}");
             Console.WriteLine($"Your Answer: {question.UserAnswer?.AnswerText ?? "No Answer"}");
-            Console.WriteLine();
         }
 
         Console.WriteLine($"Total Marks: {totalMarks}");
         Console.WriteLine($"Your Marks: {userMarks}");
         Console.WriteLine($"Final Grade: {(double)userMarks / totalMarks * 100}%");
+        Console.WriteLine(IsTimeExceeded() ? "You exceeded the time limit." : "You finished within the time limit.");
     }
 }

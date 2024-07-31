@@ -29,7 +29,6 @@ public class Program
         int duration = int.Parse(Console.ReadLine());
         
         subject.Exam.Duration = duration;
-
         for (int i = 0; i < numberOfQuestions; i++)
         {
             if (examType == ExamType.Final)
@@ -130,8 +129,12 @@ public class Program
                 subject.Exam.Questions[i] = question;
             }
         }
-
-        Console.Clear(); // should clear console and display Q one time
+        
+        // record start time
+        subject.Exam.StartTime = DateTime.Now;
+        
+        // should clear console and display Q one time
+        Console.Clear(); 
         
         foreach (var question in subject.Exam.Questions)
         {
@@ -139,9 +142,14 @@ public class Program
             question.GetUserAnswer();
         }
         
+        // record end time
+        subject.Exam.StartTime = DateTime.Now;
+        
         // Show the exam details and results
         subject.Exam.ShowExam();
         subject.Exam.ShowResults();
+        subject.Exam.ShowExamDetails();
+        subject.Exam.ShowExam(false);  
     }
 
     public enum ExamType
